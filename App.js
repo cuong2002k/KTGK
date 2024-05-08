@@ -1,12 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
+import { MyContextControllerProvider } from './Store';
+import MyRouter from './Router/MyRouter';
+import { NavigationContainer } from '@react-navigation/native';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <MyContextControllerProvider>
+      <NavigationContainer>
+        <MyRouter />
+      </NavigationContainer>
+    </MyContextControllerProvider>
+
+    // <Login />
+
   );
 }
 
